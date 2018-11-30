@@ -6,16 +6,22 @@ import { WeatherService } from './weather/weather.service';
 import { WeatherServiceFake } from './weather/weather.service.fake';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CitySearchComponent } from './city-search/city-search.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule, MaterialModule, NoopAnimationsModule
+        RouterTestingModule, 
+        MaterialModule, 
+        NoopAnimationsModule, 
+        FormsModule, 
+        ReactiveFormsModule
       ],
       providers: [{provide: WeatherService, useClass: WeatherServiceFake}],
       declarations: [
-        AppComponent, CurrentWeatherComponent
+        AppComponent, CurrentWeatherComponent, CitySearchComponent
       ],
     }).compileComponents();
   }));

@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators'
 import { ICurrentWeather } from '../interfaces';
 
 export interface IWeatherService { 
+    currentWeather: BehaviorSubject<ICurrentWeather>;
     getCurrentWeather(city: string, country: string) : Observable<ICurrentWeather>
 }
 interface ICurrentWeatherDate {
